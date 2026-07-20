@@ -1,0 +1,181 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: cooper black;
+}
+body
+{
+	background: #020012;
+	color: white;
+	overflow-x: hidden;
+}
+#load
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	z-index: 999;
+	animation: fade 9s forwards;
+	box-shadow: 0 0 60px orange;
+}
+@keyframes fade{
+	0%
+	{
+		color: yellow;
+		opacity: 1;
+	}
+	30%
+	{
+		color: blue;
+		opacity: 1;
+	}
+	60%
+	{
+		color: green;
+		opacity: 1;
+	}
+	90%{
+		background: black;
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+header
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background: rgba(255,255,255,.08);
+	backdrop-filter: blur(10px);
+}
+nav a{
+	color: white;
+	margin: 15px;
+	text-decoration: none;
+}
+nav a:hover{
+	background: cyan;
+	cursor: pointer;
+	color: purple;
+}
+.hero
+{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.hero img{
+	width: 920px;
+	border-radius: 50%;
+	animation: float 9s infinite;
+}
+@keyframes float
+{
+	50%
+	{
+		transform: translateX(-85px);
+		
+	}
+}
+p
+{
+	font-size: 25px;
+}
+h3
+{
+	font-size: 30px;
+	font-family: forte;
+	color: orange;
+}
+section
+{
+	padding: 70px 10%;
+}
+#q
+{
+	margin-top: 20px;
+	font-size: 24px;
+}
+.diya
+{
+	position: relative;
+	width: 80px;
+	height: 50px;
+	background: #b5651d;
+	border-radius: 0 0 50px 50px;
+	margin: 100px auto;
+	animation: flame .7s infinite;
+}
+.diya::before
+{
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: -45px;
+	transform: translateX(-50%);
+	width: 22px;
+	height: 40px;
+	background: gold;
+	border-radius: 50% 50% 50% 0;
+	transform-origin: bottom;
+	animation: flame 0.7s infinite alternate;
+	box-shadow: 0 0 20px orange;
+}
+.diya::after
+{
+	content: "🌸";
+	position: absolute;
+	width: 250px;
+	left: -85px;
+	top: -120px;
+	font-size: 28px;
+	animation: flowers 4s linear infinite;
+}
+
+@keyframes flame
+{
+	0%{
+		transform: translateX(-50%)scale(1) rotate(-3deg);
+	}
+	100%
+	{
+		transform: translateX(-50%)scale(1.15) rotate(3deg);
+	}
+}
+@keyframes flowers
+{
+	0%
+	{
+		transform: translateX(-60px) rotate(0deg);
+		opacity: 1;
+	}
+	20%
+	{
+		opacity: 1;
+	}
+	100%
+	{
+		transform: translateY(180px) rotate(360deg);
+		opacity: 1;
+	}
+}
+footer
+{
+	padding: 5px;
+	font-size: 40px;
+	text-align: center;
+	font-family: cooper black;
+}
